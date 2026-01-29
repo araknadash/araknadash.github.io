@@ -3,157 +3,241 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Archana Dash</title>
+    <title>Archana Dash | Data Strategy & RL</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+
     <style>
-        /* MINIMALIST CSS - SANOMA STYLE */
         :root {
-            --bg-color: #ffffff;
-            --text-color: #1a1a1a;
-            --link-color: #1a1a1a;
-            --accent-color: #666;
+            /* COLOR PALETTE */
+            --sidebar-bg: #f4f1ea; /* Soft Almond/Paper color */
+            --content-bg: #ffffff;
+            --text-main: #2c2c2c;
+            --text-light: #666666;
+            --accent: #d4a373; /* Subtle Gold/Tan for hover */
+        }
+
+        * {
+            box-sizing: border-box;
         }
 
         body {
-            font-family: "Times New Roman", Times, serif; /* The Editorial Look */
-            background-color: var(--bg-color);
-            color: var(--text-color);
-            line-height: 1.6;
             margin: 0;
-            padding: 40px;
-            max-width: 800px;
-            margin-left: auto;
-            margin-right: auto;
+            padding: 0;
+            font-family: 'Inter', sans-serif;
+            color: var(--text-main);
+            display: flex;
+            min-height: 100vh;
         }
 
-        /* HEADER */
-        header {
-            margin-bottom: 60px;
-            padding-top: 40px;
+        /* --- LAYOUT: SPLIT SCREEN --- */
+        
+        /* LEFT SIDEBAR (Fixed) */
+        .sidebar {
+            width: 35%; /* Takes up 1/3 of the screen */
+            background-color: var(--sidebar-bg);
+            padding: 60px;
+            position: fixed;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            border-right: 1px solid rgba(0,0,0,0.05);
         }
 
+        /* RIGHT CONTENT (Scrollable) */
+        .content {
+            width: 65%;
+            margin-left: 35%; /* Pushes content to right of fixed sidebar */
+            padding: 80px 100px;
+            background-color: var(--content-bg);
+            line-height: 1.8;
+        }
+
+        /* --- TYPOGRAPHY --- */
         h1 {
-            font-size: 2.5rem;
-            font-weight: normal;
-            margin-bottom: 10px;
-            letter-spacing: -0.5px;
-        }
-
-        .subtitle {
-            font-family: Helvetica, Arial, sans-serif; /* Contrast font for small text */
-            font-size: 0.85rem;
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-            color: var(--accent-color);
-            margin-top: 0;
-        }
-
-        /* SECTIONS */
-        section {
-            margin-bottom: 60px;
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            margin: 0 0 20px 0;
+            line-height: 1.1;
+            font-weight: 500;
         }
 
         h2 {
-            font-size: 1.2rem;
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            margin-top: 0;
+            margin-bottom: 30px;
             border-bottom: 1px solid #eee;
-            padding-bottom: 10px;
-            margin-bottom: 20px;
-            font-weight: normal;
-            font-style: italic;
+            padding-bottom: 15px;
+            font-weight: 400;
         }
 
-        /* LINKS */
-        a {
-            color: var(--text-color);
-            text-decoration: none;
-            border-bottom: 1px solid #ccc;
-            transition: border-color 0.2s;
+        p {
+            font-size: 1.05rem;
+            color: #444;
+            margin-bottom: 25px;
         }
 
-        a:hover {
-            border-bottom: 1px solid #000;
+        .subtitle {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--text-light);
+            margin-bottom: 40px;
+            display: block;
         }
 
-        /* PROJECT LIST */
-        .project-item {
-            display: flex;
-            justify-content: space-between;
+        /* --- NAVIGATION / LINKS --- */
+        .nav-links {
+            list-style: none;
+            padding: 0;
+            margin-top: 40px;
+        }
+
+        .nav-links li {
             margin-bottom: 15px;
-            align-items: baseline;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-main);
+            font-family: 'Playfair Display', serif;
+            font-size: 1.2rem;
+            font-style: italic;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent);
+            padding-left: 10px; /* Slight movement effect */
+        }
+
+        /* --- PROJECT GRID --- */
+        .project-card {
+            margin-bottom: 50px;
         }
 
         .project-title {
-            font-weight: bold;
+            font-size: 1.4rem;
+            font-weight: 600;
+            margin-bottom: 5px;
+            display: block;
+            text-decoration: none;
+            color: var(--text-main);
         }
 
-        .project-desc {
-            color: var(--accent-color);
-            font-size: 0.95rem;
+        .project-title:hover {
+            color: var(--accent);
         }
 
-        /* MOBILE TWEAKS */
-        @media (max-width: 600px) {
-            body { padding: 20px; }
-            h1 { font-size: 2rem; }
-            .project-item { flex-direction: column; margin-bottom: 25px; }
+        .project-meta {
+            font-size: 0.85rem;
+            color: var(--text-light);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            border: 1px solid var(--text-main);
+            text-decoration: none;
+            color: var(--text-main);
+            font-size: 0.9rem;
+            margin-top: 10px;
+            transition: all 0.3s;
+        }
+
+        .btn:hover {
+            background: var(--text-main);
+            color: #fff;
+        }
+
+        /* --- MOBILE RESPONSIVENESS --- */
+        @media (max-width: 900px) {
+            body { flex-direction: column; }
+            .sidebar { 
+                width: 100%; 
+                height: auto; 
+                position: relative; 
+                padding: 60px 40px;
+            }
+            .content { 
+                width: 100%; 
+                margin-left: 0; 
+                padding: 40px; 
+            }
         }
     </style>
 </head>
 <body>
 
-    <header>
-        <h1>Archana Dash</h1>
-        <p class="subtitle">Data Strategy Manager &bull; Reinforcement Learning &bull; Centennial, CO</p>
-    </header>
+    <aside class="sidebar">
+        <div>
+            <h1>Archana Dash</h1>
+            <span class="subtitle">Data Strategy Manager &bull; AI/RL</span>
+            
+            <p style="font-size: 0.95rem; max-width: 300px;">
+                Specializing in Reinforcement Learning and strategic data architecture. Currently building tools for cinematic product demos.
+            </p>
 
-    <section id="about">
-        <p>
-            I am a Data Strategy Manager at <strong>Fidelity Investments</strong> with a Master's degree in Reinforcement Learning. 
-            My work focuses on the intersection of strategic data architecture and emerging AI technologies.
-        </p>
-        <p>
-            Currently exploring Large Language Models (LLMs), soft prompt techniques, and building personal tools for the modern web.
-        </p>
-    </section>
+            <ul class="nav-links">
+                <li><a href="#about">About Me</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="mailto:your-email@gmail.com">Get in Touch</a></li>
+            </ul>
+        </div>
+    </aside>
 
-    <section id="projects">
-        <h2>Selected Projects</h2>
+    <main class="content">
+        
+        <section id="about">
+            <h2>About</h2>
+            <p>
+                I am a <strong>Data Strategy Manager</strong> at Fidelity Investments with a background in <strong>Reinforcement Learning</strong>. My work sits at the intersection of technical depth and strategic implementation, focusing on how emerging AI technologies can be architected for real-world impact.
+            </p>
+            <p>
+                When I'm not architecting data solutions, I'm likely exploring soft prompt techniques, hiking in Colorado, or working on personal web applications.
+            </p>
+        </section>
+        <br><br>
 
-        <div class="project-item">
-            <div>
+        <section id="projects">
+            <h2>Selected Projects</h2>
+
+            <div class="project-card">
                 <a href="#" class="project-title">Rasphia</a>
-                <br>
-                <span class="project-desc">A personal web application project focusing on cinematic product demos.</span>
+                <span class="project-meta">Web App / AI Tools / 2025</span>
+                <p>
+                    A personal webapp extenstion giving personlized styling tips based on user preferences. Leveraging custom prompts and AI generation to streamline shopping experience. 
+                </p>
+                <a href="#" class="btn">View Project</a>
             </div>
-            <div class="project-desc">2025</div>
-        </div>
 
-        <div class="project-item">
-            <div>
-                <span class="project-title">Bloomberg Data Strategy</span>
-                <br>
-                <span class="project-desc">Strategic data initiative focusing on financial modeling and architecture.</span>
+            <div class="project-card">
+                <a href="#" class="project-title">Bloomberg Data Initiative</a>
+                <span class="project-meta">Data Strategy / Architecture / 2025</span>
+                <p>
+                    Lead strategist for a financial modeling initiative. Focused on optimizing data pipelines and architectural integrity for high-volume financial datasets.
+                </p>
             </div>
-            <div class="project-desc">2025</div>
-        </div>
 
-        <div class="project-item">
-            <div>
-                <a href="https://github.com/YOUR_USERNAME" class="project-title">Local Guide Analytics</a>
-                <br>
-                <span class="project-desc">Level 6 Google Local Guide contribution analysis and mapping.</span>
+            <div class="project-card">
+                <a href="#" class="project-title">Google Local Guide Analytics</a>
+                <span class="project-meta">Data Analysis / Geospatial</span>
+                <p>
+                    An ongoing analysis of geospatial data contributions as a Level 6 Local Guide, visualizing impact and community engagement trends.
+                </p>
             </div>
-            <div class="project-desc">Ongoing</div>
-        </div>
-    </section>
 
-    <section id="connect">
-        <h2>Connect</h2>
-        <p>
-            <a href="mailto:your-email@gmail.com">Email</a> &nbsp;/&nbsp;
-            <a href="https://linkedin.com/in/your-profile">LinkedIn</a> &nbsp;/&nbsp;
-            <a href="https://github.com/your-username">GitHub</a>
-        </p>
-    </section>
+        </section>
+
+    </main>
 
 </body>
 </html>
