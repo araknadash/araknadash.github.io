@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Archana Dash</title>
+    <style>
+        /* MINIMALIST CSS - SANOMA STYLE */
+        :root {
+            --bg-color: #ffffff;
+            --text-color: #1a1a1a;
+            --link-color: #1a1a1a;
+            --accent-color: #666;
+        }
+
+        body {
+            font-family: "Times New Roman", Times, serif; /* The Editorial Look */
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            margin: 0;
+            padding: 40px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* HEADER */
+        header {
+            margin-bottom: 60px;
+            padding-top: 40px;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            font-weight: normal;
+            margin-bottom: 10px;
+            letter-spacing: -0.5px;
+        }
+
+        .subtitle {
+            font-family: Helvetica, Arial, sans-serif; /* Contrast font for small text */
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: var(--accent-color);
+            margin-top: 0;
+        }
+
+        /* SECTIONS */
+        section {
+            margin-bottom: 60px;
+        }
+
+        h2 {
+            font-size: 1.2rem;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+            font-weight: normal;
+            font-style: italic;
+        }
+
+        /* LINKS */
+        a {
+            color: var(--text-color);
+            text-decoration: none;
+            border-bottom: 1px solid #ccc;
+            transition: border-color 0.2s;
+        }
+
+        a:hover {
+            border-bottom: 1px solid #000;
+        }
+
+        /* PROJECT LIST */
+        .project-item {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 15px;
+            align-items: baseline;
+        }
+
+        .project-title {
+            font-weight: bold;
+        }
+
+        .project-desc {
+            color: var(--accent-color);
+            font-size: 0.95rem;
+        }
+
+        /* MOBILE TWEAKS */
+        @media (max-width: 600px) {
+            body { padding: 20px; }
+            h1 { font-size: 2rem; }
+            .project-item { flex-direction: column; margin-bottom: 25px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Archana Dash</h1>
+        <p class="subtitle">Data Strategy Manager &bull; Reinforcement Learning &bull; Centennial, CO</p>
+    </header>
+
+    <section id="about">
+        <p>
+            I am a Data Strategy Manager at <strong>Fidelity Investments</strong> with a Master's degree in Reinforcement Learning. 
+            My work focuses on the intersection of strategic data architecture and emerging AI technologies.
+        </p>
+        <p>
+            Currently exploring Large Language Models (LLMs), soft prompt techniques, and building personal tools for the modern web.
+        </p>
+    </section>
+
+    <section id="projects">
+        <h2>Selected Projects</h2>
+
+        <div class="project-item">
+            <div>
+                <a href="#" class="project-title">Rasphia</a>
+                <br>
+                <span class="project-desc">A personal web application project focusing on cinematic product demos.</span>
+            </div>
+            <div class="project-desc">2025</div>
+        </div>
+
+        <div class="project-item">
+            <div>
+                <span class="project-title">Bloomberg Data Strategy</span>
+                <br>
+                <span class="project-desc">Strategic data initiative focusing on financial modeling and architecture.</span>
+            </div>
+            <div class="project-desc">2025</div>
+        </div>
+
+        <div class="project-item">
+            <div>
+                <a href="https://github.com/YOUR_USERNAME" class="project-title">Local Guide Analytics</a>
+                <br>
+                <span class="project-desc">Level 6 Google Local Guide contribution analysis and mapping.</span>
+            </div>
+            <div class="project-desc">Ongoing</div>
+        </div>
+    </section>
+
+    <section id="connect">
+        <h2>Connect</h2>
+        <p>
+            <a href="mailto:your-email@gmail.com">Email</a> &nbsp;/&nbsp;
+            <a href="https://linkedin.com/in/your-profile">LinkedIn</a> &nbsp;/&nbsp;
+            <a href="https://github.com/your-username">GitHub</a>
+        </p>
+    </section>
+
+</body>
+</html>
