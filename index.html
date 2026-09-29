@@ -3,88 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Archana Dash | Data Strategy & RL</title>
-    
+    <title>Ara Dash | Data, AI & Investment Research</title>
+    <meta name="description" content="Ara Dash — Sr. Finance Associate at Fidelity Investments. Background in reinforcement learning, data analytics, and building AI-driven decision-support tools.">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
 
     <style>
         :root {
-            /* COLOR PALETTE */
-            --sidebar-bg: #f4f1ea; /* Soft Almond/Paper color */
+            --sidebar-bg: #f4f1ea;
             --content-bg: #ffffff;
             --text-main: #2c2c2c;
             --text-light: #666666;
-            --accent: #d4a373; /* Subtle Gold/Tan for hover */
+            --accent: #d4a373;
+            --line: #e3ded7;
         }
 
-        * {
-            box-sizing: border-box;
-        }
-        /* --- EXPERIENCE TIMELINE --- */
-        .timeline {
-            position: relative;
-            margin: 60px 0 40px 0;
-            padding-left: 30px;
-        }
-        .timeline:before {
-            content: "";
-            position: absolute;
-            left: 8px;
-            top: 0;
-            bottom: 0;
-            width: 2px;
-            background: #e3ded7;
-        }
-        .timeline-item {
-            position: relative;
-            margin-bottom: 45px;
-            padding-left: 30px;
-        }
-        .timeline-item:last-child {
-            margin-bottom: 0;
-        }
-        .timeline-dot {
-            position: absolute;
-            left: -3px;
-            top: 6px;
-            width: 14px;
-            height: 14px;
-            background: var(--accent);
-            border-radius: 50%;
-            border: 4px solid #fff;
-            box-shadow: 0 0 0 2px #e3ded7;
-        }
-        .timeline-content {
-            background: none;
-            padding: 0;
-        }
-        .timeline-role {
-            font-weight: 600;
-            font-size: 1rem;
-            color: var(--text-main);
-            font-family: 'Inter', sans-serif;
-        }
-        .timeline-org {
-            color: var(--text-light);
-            letter-spacing: 0.02em;
-            font-size: 0.95rem;
-            margin-top: 3px;
-        }
-        .timeline-date {
-            color: #999;
-            font-size: 0.92rem;
-            margin-bottom: 5px;
-        }
-        @media (max-width: 900px) {
-            .timeline {
-                padding-left: 18px;
-            }
-            .timeline-item {
-                padding-left: 18px;
-            }
-        }
+        * { box-sizing: border-box; }
 
         body {
             margin: 0;
@@ -96,10 +32,8 @@
         }
 
         /* --- LAYOUT: SPLIT SCREEN --- */
-        
-        /* LEFT SIDEBAR (Fixed) */
         .sidebar {
-            width: 35%; /* Takes up 1/3 of the screen */
+            width: 35%;
             background-color: var(--sidebar-bg);
             padding: 60px;
             position: fixed;
@@ -110,10 +44,9 @@
             border-right: 1px solid rgba(0,0,0,0.05);
         }
 
-        /* RIGHT CONTENT (Scrollable) */
         .content {
             width: 65%;
-            margin-left: 35%; /* Pushes content to right of fixed sidebar */
+            margin-left: 35%;
             padding: 80px 100px;
             background-color: var(--content-bg);
             line-height: 1.8;
@@ -122,8 +55,8 @@
         /* --- TYPOGRAPHY --- */
         h1 {
             font-family: 'Playfair Display', serif;
-            font-size: 3rem;
-            margin: 0 0 20px 0;
+            font-size: 2.9rem;
+            margin: 0 0 16px 0;
             line-height: 1.1;
             font-weight: 500;
         }
@@ -138,6 +71,14 @@
             font-weight: 400;
         }
 
+        h3 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 500;
+            font-size: 1.2rem;
+            margin: 0 0 18px 0;
+            color: var(--text-main);
+        }
+
         p {
             font-size: 1.05rem;
             color: #444;
@@ -145,12 +86,38 @@
         }
 
         .subtitle {
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             text-transform: uppercase;
-            letter-spacing: 2px;
+            letter-spacing: 1.5px;
             color: var(--text-light);
-            margin-bottom: 40px;
+            margin-bottom: 30px;
             display: block;
+            line-height: 1.6;
+        }
+
+        .sidebar-bio {
+            font-size: 0.95rem;
+            max-width: 300px;
+            color: #555;
+            margin-bottom: 0;
+        }
+
+        /* --- SKILL TAGS (sidebar) --- */
+        .tag-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 28px;
+        }
+
+        .tag {
+            font-size: 0.75rem;
+            letter-spacing: 0.3px;
+            padding: 5px 12px;
+            border: 1px solid var(--line);
+            border-radius: 20px;
+            color: var(--text-light);
+            background: rgba(255,255,255,0.5);
         }
 
         /* --- NAVIGATION / LINKS --- */
@@ -160,9 +127,7 @@
             margin-top: 40px;
         }
 
-        .nav-links li {
-            margin-bottom: 15px;
-        }
+        .nav-links li { margin-bottom: 15px; }
 
         .nav-links a {
             text-decoration: none;
@@ -170,12 +135,32 @@
             font-family: 'Playfair Display', serif;
             font-size: 1.2rem;
             font-style: italic;
-            transition: color 0.3s;
+            transition: color 0.3s, padding-left 0.3s;
         }
 
         .nav-links a:hover {
             color: var(--accent);
-            padding-left: 10px; /* Slight movement effect */
+            padding-left: 10px;
+        }
+
+        .social-row {
+            margin-top: 36px;
+            display: flex;
+            gap: 18px;
+        }
+
+        .social-row a {
+            font-size: 0.85rem;
+            color: var(--text-light);
+            text-decoration: none;
+            border-bottom: 1px solid var(--line);
+            padding-bottom: 2px;
+            transition: color 0.3s, border-color 0.3s;
+        }
+
+        .social-row a:hover {
+            color: var(--accent);
+            border-color: var(--accent);
         }
 
         /* --- PROJECT GRID --- */
@@ -201,9 +186,7 @@
             color: var(--text-main);
         }
 
-        .project-title:hover {
-            color: var(--accent);
-        }
+        .project-title.is-link:hover { color: var(--accent); }
 
         .project-meta {
             font-size: 0.85rem;
@@ -212,6 +195,17 @@
             letter-spacing: 1px;
             margin-bottom: 15px;
             display: block;
+        }
+
+        .project-status {
+            display: inline-block;
+            font-size: 0.75rem;
+            letter-spacing: 0.3px;
+            color: var(--text-light);
+            border: 1px solid var(--line);
+            border-radius: 20px;
+            padding: 4px 12px;
+            margin-top: 6px;
         }
 
         .btn {
@@ -230,20 +224,112 @@
             color: #fff;
         }
 
+        /* --- EXPERIENCE TIMELINE --- */
+        .timeline {
+            position: relative;
+            margin: 20px 0 40px 0;
+            padding-left: 30px;
+        }
+        .timeline:before {
+            content: "";
+            position: absolute;
+            left: 8px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: var(--line);
+        }
+        .timeline-item {
+            position: relative;
+            margin-bottom: 40px;
+            padding-left: 30px;
+        }
+        .timeline-item:last-child { margin-bottom: 0; }
+        .timeline-dot {
+            position: absolute;
+            left: -3px;
+            top: 6px;
+            width: 14px;
+            height: 14px;
+            background: var(--accent);
+            border-radius: 50%;
+            border: 4px solid #fff;
+            box-shadow: 0 0 0 2px var(--line);
+        }
+        .timeline-role {
+            font-weight: 600;
+            font-size: 1.05rem;
+            color: var(--text-main);
+            font-family: 'Inter', sans-serif;
+        }
+        .timeline-org {
+            color: var(--text-light);
+            letter-spacing: 0.02em;
+            font-size: 0.95rem;
+            margin-top: 3px;
+        }
+        .timeline-date {
+            color: #999;
+            font-size: 0.85rem;
+            margin: 4px 0 8px 0;
+        }
+        .timeline-desc {
+            font-size: 0.95rem;
+            color: #555;
+            margin: 0;
+        }
+
+        /* --- CREDENTIALS --- */
+        .cred-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 10px;
+        }
+
+        .cred-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .cred-list li {
+            font-size: 0.95rem;
+            color: #444;
+            padding: 10px 0;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .cred-list li:last-child { border-bottom: none; }
+
+        footer {
+            margin-top: 60px;
+            padding-top: 30px;
+            border-top: 1px solid #eee;
+            font-size: 0.85rem;
+            color: var(--text-light);
+        }
+
         /* --- MOBILE RESPONSIVENESS --- */
         @media (max-width: 900px) {
             body { flex-direction: column; }
-            .sidebar { 
-                width: 100%; 
-                height: auto; 
-                position: relative; 
-                padding: 60px 40px;
+            .sidebar {
+                width: 100%;
+                height: auto;
+                position: relative;
+                padding: 50px 30px;
             }
-            .content { 
-                width: 100%; 
-                margin-left: 0; 
-                padding: 40px; 
+            .content {
+                width: 100%;
+                margin-left: 0;
+                padding: 40px 30px;
             }
+            .cred-grid {
+                grid-template-columns: 1fr;
+                gap: 10px;
+            }
+            .timeline { padding-left: 18px; }
+            .timeline-item { padding-left: 18px; }
         }
     </style>
 </head>
@@ -251,56 +337,126 @@
 
     <aside class="sidebar">
         <div>
-            <h1>Archana Dash</h1>
-            <span class="subtitle">Data Strategy Manager &bull; AI/RL</span>
-            
-            <p style="font-size: 0.95rem; max-width: 300px;">
-                Specializing in Reinforcement Learning and strategic data architecture. Currently building tools for cinematic product demos.
+            <h1>Ara Dash</h1>
+            <span class="subtitle">Sr. Finance Associate, Fidelity Investments<br>Data &bull; AI &bull; Investment Research</span>
+
+            <p class="sidebar-bio">
+                Reinforcement-learning researcher turned data &amp; investments professional. Obsessed with figuring out why a system is shaped the way it is — and how to make it work better for the people who depend on it.
             </p>
+
+            <div class="tag-row">
+                <span class="tag">User Profiling</span>
+                <span class="tag">Asset Management</span>
+                <span class="tag">LLMOps</span>
+            </div>
 
             <ul class="nav-links">
                 <li><a href="#about">About Me</a></li>
+                <li><a href="#experience">Experience</a></li>
                 <li><a href="#projects">Projects</a></li>
-                <li><a href="mailto:your-email@gmail.com">Get in Touch</a></li>
+                <li><a href="mailto:arcdash1601@gmail.com">Get in Touch</a></li>
             </ul>
+
+            <div class="social-row">
+                <a href="https://www.linkedin.com/in/arachana-dash" target="_blank" rel="noopener">LinkedIn</a>
+                <a href="mailto:arcdash1601@gmail.com">Email</a>
+            </div>
         </div>
     </aside>
 
     <main class="content">
-        
+
         <section id="about">
             <h2>About</h2>
             <p>
-                I am a <strong>Data Strategy Manager</strong> at Fidelity Investments with a background in <strong>Reinforcement Learning</strong>. My work sits at the intersection of technical depth and strategic implementation, focusing on how emerging AI technologies can be architected for real-world impact.
+                I'm a <strong>Sr. Finance Associate</strong> at Fidelity Investments, working at the intersection of investment data, research insight, and emerging AI capabilities — building on a couple of years managing data analytics &amp; insights for a portfolio platform, and, before that, on graduate research in reinforcement learning.
             </p>
             <p>
-                When I'm not architecting data solutions, I'm likely exploring soft prompt techniques, hiking in Colorado, or working on personal web applications.
+                I moved into finance because I wanted my work to touch the decisions that actually shape people's lives — how they save, invest, and plan for the future they want. What keeps me there is that I'm genuinely obsessed with problems: hand me a messy workflow, an unexplained return series, or a dashboard nobody trusts, and I can't let it go until I understand why it's built that way and whether it could work better. That's the same itch that had me decoding neural signals to control a robot arm in grad school and building emergency-brake electronics for a Hyperloop pod — different domains, same compulsion to take the system apart and rebuild it cleaner.
+            </p>
+            <p>
+                Right now that means translating dense data into investment narratives PMs and analysts can actually use, and strengthening the finance side of that equation through CFA Foundations and AI-in-finance coursework. When I'm off the clock, I'm usually exploring prompting techniques for LLMs, hiking, or shipping small personal web apps.
             </p>
         </section>
+
+        <br><br>
+
+        <section id="experience">
+            <h2>Experience</h2>
+            <div class="timeline">
+
+                <div class="timeline-item">
+                    <span class="timeline-dot"></span>
+                    <div class="timeline-role">Sr. Finance Associate</div>
+                    <div class="timeline-org">Fidelity Investments &middot; Boston, MA</div>
+                    <div class="timeline-date">May 2026 &ndash; Present</div>
+                </div>
+
+                <div class="timeline-item">
+                    <span class="timeline-dot"></span>
+                    <div class="timeline-role">Data Analytics &amp; Insights Manager</div>
+                    <div class="timeline-org">Fidelity Investments &middot; Strategic Advisers LLC &middot; Denver, CO</div>
+                    <div class="timeline-date">Feb 2024 &ndash; May 2026</div>
+                    <p class="timeline-desc">Platform data strategy &amp; operations — equity holdings, FactSet workflows, and portfolio dashboards for PMs and analysts.</p>
+                </div>
+
+                <div class="timeline-item">
+                    <span class="timeline-dot"></span>
+                    <div class="timeline-role">Investment Ops Analyst</div>
+                    <div class="timeline-org">Fidelity Investments &middot; Denver, CO</div>
+                    <div class="timeline-date">Aug 2022 &ndash; Feb 2024</div>
+                </div>
+
+                <div class="timeline-item">
+                    <span class="timeline-dot"></span>
+                    <div class="timeline-role">Sales Operations Analyst</div>
+                    <div class="timeline-org">Altus Group &middot; Houston, TX</div>
+                    <div class="timeline-date">May 2021 &ndash; Oct 2022</div>
+                    <p class="timeline-desc">Built reporting infrastructure on Tableau and SQL across 15+ data sources; a cohort-analysis rebuild for Finance improved monthly retention 18% and cut churn 12 bps.</p>
+                </div>
+
+                <div class="timeline-item">
+                    <span class="timeline-dot"></span>
+                    <div class="timeline-role">Data Analyst</div>
+                    <div class="timeline-org">MD Anderson Cancer Center &middot; Houston, TX</div>
+                    <div class="timeline-date">Sep 2019 &ndash; May 2022</div>
+                </div>
+
+                <div class="timeline-item">
+                    <span class="timeline-dot"></span>
+                    <div class="timeline-role">Research Assistant &mdash; Neural-Controlled Robotics</div>
+                    <div class="timeline-org">University of Houston</div>
+                    <div class="timeline-date">Jun 2018 &ndash; Sep 2019</div>
+                    <p class="timeline-desc">Used neural activity to drive human-like pickup-and-reach tasks on a Universal Robot; simulated RNN/LSTM control policies across UR, Rethink, Fetch, and WAM platforms.</p>
+                </div>
+
+            </div>
+        </section>
+
         <br><br>
 
         <section id="projects">
             <h2>Selected Projects</h2>
 
             <div class="project-card">
-                <a href="#" class="project-title">Rasphia</a>
+                <span class="project-title">Rasphia</span>
                 <span class="project-meta">Web App / AI Tools / 2025</span>
                 <p>
-                    A personal webapp extenstion giving personlized styling tips based on user preferences. Leveraging custom prompts and AI generation to streamline shopping experience. 
+                    A personal webapp extension giving personalized styling tips based on user preferences, leveraging custom prompts and AI generation to streamline the shopping experience.
                 </p>
-                <a href="#" class="btn">View Project</a>
+                <span class="project-status">Private &middot; in progress</span>
             </div>
 
             <div class="project-card">
-                <a href="#" class="project-title">Bloomberg Data Initiative</a>
+                <span class="project-title">Data Strategy Initiative, Fidelity Investments</span>
                 <span class="project-meta">Data Strategy / Architecture / 2025</span>
                 <p>
-                    Lead strategist for a financial modeling initiative. Focused on optimizing data pipelines and architectural integrity for high-volume financial datasets.
+                    Lead strategist for a financial modeling initiative focused on optimizing data pipelines and architectural integrity for high-volume investment datasets.
                 </p>
             </div>
 
             <div class="project-card">
-                <a href="#" class="project-title">Google Local Guide Analytics</a>
+                <span class="project-title">Google Local Guide Analytics</span>
                 <span class="project-meta">Data Analysis / Geospatial</span>
                 <p>
                     An ongoing analysis of geospatial data contributions as a Level 6 Local Guide, visualizing impact and community engagement trends.
@@ -308,6 +464,33 @@
             </div>
 
         </section>
+
+        <br><br>
+
+        <section id="credentials">
+            <h2>Credentials</h2>
+            <div class="cred-grid">
+                <div>
+                    <h3>Certifications</h3>
+                    <ul class="cred-list">
+                        <li>Generative AI with Large Language Models</li>
+                        <li>Databases and SQL for Data Science</li>
+                        <li>Oracle Database PL/SQL Developer Certified Professional</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>Education</h3>
+                    <ul class="cred-list">
+                        <li>M.S., Computer Engineering &mdash; University of Houston</li>
+                        <li>B.S., Electrical, Electronics &amp; Communications Engineering &mdash; JNTU</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            Ara Dash &middot; Boston, MA &middot; <a href="mailto:arcdash1601@gmail.com" style="color: var(--text-light);">arcdash1601@gmail.com</a>
+        </footer>
 
     </main>
 
